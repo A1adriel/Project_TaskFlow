@@ -29,31 +29,31 @@
 
 ## Ключевые фрагменты кода
 Функция добавления задачи с валидацией входных данных:
-function addTask(text, priority) {
+```function addTask(text, priority) {
   text = text.trim();          // метод валидации
   if (!text) return false;
   tasks.push({ id: nextId++, text, priority,
     done: false, createdAt: new Date().toLocaleDateString('ru-RU') });
   save();  return true;
 }
-
+```
 Функция рендера — единственная точка обновления DOM:
-function render() {
+```function render() {
   // 1. Обновить бэджи фильтров
   // 2. Обновить прогресс-бар
   // 3. Отфильтровать и отсортировать задачи
   // 4. Сгенерировать HTML и вставить в DOM
 }
-
+```
 Делегирование событий — один обработчик на весь список:
-taskList.addEventListener('click', e => {
+```taskList.addEventListener('click', e => {
   const li = e.target.closest('.task-item');
   const id = parseInt(li.dataset.id, 10);
   if (e.target.closest('.delete-btn')) deleteTask(id);
   else if (e.target.closest('.check-wrap')) toggleTask(id);
   render();
 });
-
+```
 ## Возникшие сложности и способы их решения
 | Сложность | Решение |
 |-----------|---------|
