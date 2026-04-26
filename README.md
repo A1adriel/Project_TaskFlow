@@ -80,3 +80,11 @@ taskList.addEventListener('click', e => {
 | Сортировка: активные задачи должны быть выше выполненных | Двухуровневая сортировка: сначала по полю `done`, затем по приоритету |
 | Сохранение id при удалении задач (чтобы id не повторялись) | Счётчик `nextId` хранится отдельно в `localStorage` и никогда не обнуляется |
 | Адаптивность фильтров (кнопки выходят за экран на малых экранах) | Горизонтальный скролл с `display: flex` + `overflow-x: auto` + скрытый scrollbar |
+
+## Демонстрация работы веб-приложения
+<img width="1852" height="1102" alt="image" src="https://github.com/user-attachments/assets/e4e1312e-1ba3-4c0d-ae73-ca49ee447fff" />
+<img width="948" height="696" alt="image" src="https://github.com/user-attachments/assets/f121220d-1e48-456d-80da-c3dac9cbc731" />
+<img width="942" height="622" alt="image" src="https://github.com/user-attachments/assets/c519d48b-3a6c-419e-bf2e-e52ca4a1223a" />
+
+
+
