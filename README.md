@@ -28,8 +28,12 @@
 –	Контроллер (Controller) — обработчики событий DOM: добавление задачи по кнопке и клавише Enter, делегированный обработчик на список для toggle/delete, кнопки фильтров.
 
 ## Ключевые фрагменты кода
-Функция добавления задачи с валидацией входных данных:
-```function addTask(text, priority) {
+## Ключевые реализации
+
+### Добавление задачи с валидацией входных данных
+
+```javascript
+function addTask(text, priority) {
   text = text.trim();          // метод валидации
   if (!text) return false;
   tasks.push({ id: nextId++, text, priority,
@@ -37,16 +41,22 @@
   save();  return true;
 }
 ```
-Функция рендера — единственная точка обновления DOM:
-```function render() {
+
+### Функция рендера — единственная точка обновления DOM
+
+```javascript
+function render() {
   // 1. Обновить бэджи фильтров
   // 2. Обновить прогресс-бар
   // 3. Отфильтровать и отсортировать задачи
   // 4. Сгенерировать HTML и вставить в DOM
 }
 ```
-Делегирование событий — один обработчик на весь список:
-```taskList.addEventListener('click', e => {
+
+### Делегирование событий — один обработчик на весь список
+
+```javascript
+taskList.addEventListener('click', e => {
   const li = e.target.closest('.task-item');
   const id = parseInt(li.dataset.id, 10);
   if (e.target.closest('.delete-btn')) deleteTask(id);
